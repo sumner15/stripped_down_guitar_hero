@@ -1,0 +1,12 @@
+# Blender MTL File: 'target.blend'
+# Material Count: 1
+newmtl Material.001
+Ns 9.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.085889 0.640000 0.056105
+Ks 0.261364 0.261364 0.261364
+Ni 1.000000
+d 1.000000
+illum 2
+
+

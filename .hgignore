@@ -1,0 +1,55 @@
+# use glob syntax
+syntax: glob
+
+# ignore all the filetypes that vb makes - note that we can't ignore .obj files 
+# because we want our wavefront graphics files to be tracked.
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.scc
+*.DotSettings
+*.vbproj
+
+# ignore folders created by visual studio
+#[Bb]in
+#[Dd]ebug*/**
+[Dd]ebug*/*.exe
+[Dd]ebug*/*.pdb
+[Dd]ebug*/*.xml
+[Dd]ebug*/*.vshost*
+obj/
+[Rr]elease*/**
+_ReSharper*/**
+NDependOut/**
+packages/**
+[Tt]humbs.db
+[Tt]est[Rr]esult*
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*.resharper
+*.ncrunch*
+*.ndproj
+
+# ignore folders that contain datafiles
+dataFiles/
+gainFiles/
+hitTimeFiles/
+scoreFiles/
+
+# we don't really want hg to keep track of the subjects that we add either.
+[Ss]ubjects/

@@ -1,0 +1,13 @@
+# Blender MTL File: 'cloudSphere.blend'
+# Material Count: 1
+newmtl Material_clouds2.bmp
+Ns 150.980392
+Ka 0.028379 0.728587 0.800000
+Kd 0.028379 0.728587 0.800000
+Ks 1.000000 1.000000 1.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\VB programs\working game\gameWindowExp\textures\clouds2.bmp
+
+

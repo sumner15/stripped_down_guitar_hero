@@ -1,0 +1,13 @@
+# Blender MTL File: 'fretboard.blend'
+# Material Count: 1
+newmtl Material_fretboard2.bmp
+Ns 194.117647
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.038841 0.519737
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\VB programs\working game\gameWindowExp\textures\fretboard2.bmp
+
+

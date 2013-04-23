@@ -1,0 +1,12 @@
+# Blender MTL File: 'tube.blend'
+# Material Count: 1
+newmtl Material.001
+Ns 60.784314
+Ka 0.000000 0.000000 0.000000
+Kd 0.462061 0.458960 0.465162
+Ks 0.380630 0.380630 0.380630
+Ni 1.000000
+d 1.000000
+illum 2
+
+

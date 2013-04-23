@@ -1,0 +1,43 @@
+# Blender MTL File: ''
+# Material Count: 4
+newmtl Material
+Ns 5.882353
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.640000 0.607436
+Ks 0.140857 0.340909 0.336568
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Material.001
+Ns 29.411765
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.064292 0.640000
+Ks 0.147727 0.147727 0.147727
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Material.002
+Ns 39.215686
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.640000 0.047349
+Ks 0.238636 0.238636 0.238636
+Ni 1.000000
+d 1.000000
+illum 2
+
+
+newmtl Material_sample.bmp
+Ns 5.882353
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.640000 0.607436
+Ks 0.140857 0.340909 0.336568
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\VB programs\working game\gameWindowExp\textures\sample.bmp
+
+

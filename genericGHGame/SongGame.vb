@@ -8,6 +8,7 @@ Imports System.Drawing.Imaging
 Imports System.Math
 Imports System.IO
 Imports System.Text
+Imports System.Diagnostics
 
 Imports OpenTK
 Imports OpenTK.Platform

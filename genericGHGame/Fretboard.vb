@@ -4,6 +4,7 @@
 ' the fretboard class mannages the stage, the five strings, and the five targets
 
 Imports System.Math
+Imports System.Diagnostics
 Imports OpenTK
 Imports OpenTK.Platform
 Imports OpenTK.Graphics.OpenGL

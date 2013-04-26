@@ -5,6 +5,7 @@ Imports OpenTK
 Imports OpenTK.Platform
 Imports OpenTK.Graphics.OpenGL
 Imports System.Math
+Imports System.Diagnostics
 Public Class Model
     Public mesh As MeshVbo
     Public pos(2) As Single

@@ -49,7 +49,6 @@ packages/**
 dataFiles/
 gainFiles/
 hitTimeFiles/
-scoreFiles/
 
 # we don't really want hg to keep track of the subjects that we add either.
 [Ss]ubjects/

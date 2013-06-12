@@ -36,6 +36,12 @@ Partial Class Menu
         Me.subIdTb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.subjectList = New System.Windows.Forms.ListBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.NoteRateHSB = New System.Windows.Forms.HScrollBar()
+        Me.TargRateHSB = New System.Windows.Forms.HScrollBar()
+        Me.NoteRateLbl = New System.Windows.Forms.Label()
+        Me.TargRateLbl = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.thumbnail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -166,12 +172,88 @@ Partial Class Menu
         Me.subjectList.Size = New System.Drawing.Size(178, 238)
         Me.subjectList.TabIndex = 14
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(43, 429)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(170, 20)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Note Flicker Rate (Hz):"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(31, 459)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(182, 20)
+        Me.Label4.TabIndex = 24
+        Me.Label4.Text = "Target Flicker Rate (Hz):"
+        '
+        'NoteRateHSB
+        '
+        Me.NoteRateHSB.LargeChange = 1
+        Me.NoteRateHSB.Location = New System.Drawing.Point(239, 429)
+        Me.NoteRateHSB.Maximum = 60
+        Me.NoteRateHSB.Minimum = 5
+        Me.NoteRateHSB.Name = "NoteRateHSB"
+        Me.NoteRateHSB.Size = New System.Drawing.Size(394, 20)
+        Me.NoteRateHSB.TabIndex = 25
+        Me.NoteRateHSB.Value = 30
+        '
+        'TargRateHSB
+        '
+        Me.TargRateHSB.LargeChange = 1
+        Me.TargRateHSB.Location = New System.Drawing.Point(239, 459)
+        Me.TargRateHSB.Maximum = 60
+        Me.TargRateHSB.Minimum = 5
+        Me.TargRateHSB.Name = "TargRateHSB"
+        Me.TargRateHSB.Size = New System.Drawing.Size(394, 20)
+        Me.TargRateHSB.TabIndex = 26
+        Me.TargRateHSB.Value = 30
+        '
+        'NoteRateLbl
+        '
+        Me.NoteRateLbl.AutoSize = True
+        Me.NoteRateLbl.BackColor = System.Drawing.Color.Transparent
+        Me.NoteRateLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoteRateLbl.ForeColor = System.Drawing.Color.Red
+        Me.NoteRateLbl.Location = New System.Drawing.Point(209, 429)
+        Me.NoteRateLbl.Name = "NoteRateLbl"
+        Me.NoteRateLbl.Size = New System.Drawing.Size(29, 20)
+        Me.NoteRateLbl.TabIndex = 27
+        Me.NoteRateLbl.Text = "30"
+        '
+        'TargRateLbl
+        '
+        Me.TargRateLbl.AutoSize = True
+        Me.TargRateLbl.BackColor = System.Drawing.Color.Transparent
+        Me.TargRateLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TargRateLbl.ForeColor = System.Drawing.Color.Red
+        Me.TargRateLbl.Location = New System.Drawing.Point(209, 459)
+        Me.TargRateLbl.Name = "TargRateLbl"
+        Me.TargRateLbl.Size = New System.Drawing.Size(29, 20)
+        Me.TargRateLbl.TabIndex = 28
+        Me.TargRateLbl.Text = "30"
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(666, 453)
+        Me.ClientSize = New System.Drawing.Size(666, 506)
+        Me.Controls.Add(Me.TargRateLbl)
+        Me.Controls.Add(Me.NoteRateLbl)
+        Me.Controls.Add(Me.TargRateHSB)
+        Me.Controls.Add(Me.NoteRateHSB)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.difficultyList)
         Me.Controls.Add(Me.playSongBtn)
         Me.Controls.Add(Me.Panel2)
@@ -203,4 +285,10 @@ Partial Class Menu
     Friend WithEvents subIdTb As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents subjectList As System.Windows.Forms.ListBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents NoteRateHSB As System.Windows.Forms.HScrollBar
+    Friend WithEvents TargRateHSB As System.Windows.Forms.HScrollBar
+    Friend WithEvents NoteRateLbl As System.Windows.Forms.Label
+    Friend WithEvents TargRateLbl As System.Windows.Forms.Label
 End Class

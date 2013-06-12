@@ -13,6 +13,8 @@ Module Module1
     Public currentSong As Song
     Public moreNoise As NoiseMaker
     Public trialStr As String = ""
+    Public noteRate As Integer
+    Public targRate As Integer
 
     Public menu As Menu
 

@@ -56,8 +56,8 @@ Public Class SongGame
     Private topPannel As New Model("topPannel", "topPannel", {0, Height / 50, -20.0}, {0.0, 180.0, 0.0}, Width / (50 * 10))
     Private progressbar As New Model("progressBar", {0, Height / 50, -20.0}, {0.0, 180.0, 0.0}, Width / (50 * 10))
 
-    Private notePulseTime As Integer = Round(1 / 50 * 1000) '1(sec)/frequency(Hz) --> (msec)
-    Private targPulseTime As Integer = Round(1 / 60 * 1000) '1(sec)/frequency(Hz) --> (msec)
+    Private notePulseTime As Integer = Round(1 / noteRate * 1000) '1(sec)/frequency(Hz) --> (msec)
+    Private targPulseTime As Integer = Round(1 / targRate * 1000) '1(sec)/frequency(Hz) --> (msec)
     Private lastNotePulseTime As Integer
     Private lastTargPulseTime As Integer
     Private noteShow As Boolean = True

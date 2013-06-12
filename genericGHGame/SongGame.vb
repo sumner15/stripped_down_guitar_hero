@@ -170,7 +170,7 @@ Public Class SongGame
         'GL.Enable(EnableCap.Blend)
         GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.DstAlpha)
         setViewPoint()
-        GraphicsContext.CurrentContext.VSync = False ' if you don't set this to false then swapbuffers will wait for the monitor to refresh
+        GraphicsContext.CurrentContext.VSync = True ' if you don't set this to false then swapbuffers will wait for the monitor to refresh
     End Sub
 #End Region
 
@@ -319,6 +319,8 @@ Public Class SongGame
             scoreText = New TextSign("you scored " & CStr(score) & " out of " & CStr(possibleScore))
             'scoreText = New TextSign("Good Job!")
         End If
+
+        'System.Threading.Thread.CurrentThread.Sleep(1)
 
 
     End Sub

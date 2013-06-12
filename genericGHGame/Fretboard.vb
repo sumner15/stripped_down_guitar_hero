@@ -116,6 +116,7 @@ Public Class Fretboard
             fretBoardZ = -8
         Else
             fretBoardZ += winSizeU / winSizeS * timeSinceLastMove.ElapsedMilliseconds  ' clock.timeStep
+            'Console.WriteLine(timeSinceLastMove.ElapsedMilliseconds)
             timeSinceLastMove.Restart()
         End If
 

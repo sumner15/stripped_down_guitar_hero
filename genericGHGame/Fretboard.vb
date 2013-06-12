@@ -96,7 +96,7 @@ Public Class Fretboard
     '-------------------------------- drawing function --------------------------------'
     '----------------------------------------------------------------------------------'
     ' draws the fretboard, the strings, and the targets
-    Public Sub draw(ByRef targetTime As Single)
+    Public Sub draw(ByRef targetTime As Single, ByRef noteShow As Boolean, ByRef targetShow As Boolean)
         'GL.Enable(EnableCap.Blend)
         GL.Enable(EnableCap.Texture2D)
         GL.PushMatrix()
@@ -121,8 +121,8 @@ Public Class Fretboard
         End If
 
         For i = 0 To 4 Step 1
-            strings(i).drawNotes(targetTime)
-            targets(i).drawTarget()
+            If noteShow Then strings(i).drawNotes(targetTime)
+            If targetShow Then targets(i).drawTarget()
         Next
     End Sub
 

@@ -152,9 +152,9 @@ Partial Class Menu
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(233, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(181, 33)
+        Me.Label1.Size = New System.Drawing.Size(195, 33)
         Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Rehab Hero"
+        Me.Label1.Text = "Flicker Hero!"
         '
         'subjectList
         '

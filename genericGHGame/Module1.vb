@@ -6,7 +6,7 @@ Module Module1
     'Public GAMEPATH As String = "C:\ROBOTIC LAB\Hand Rehabilitation Robot\expo2012\gameWindowExp\"
     Public GAMEPATH As String = Application.StartupPath
     Public positions() As Double = {2.25, 1.15, 0.0, -1.15, -2.25}
-    Public FPS As Double = 200
+    Public FPS As Double = 60
     Public diagnostic As Boolean = False
 
     Public currentSub As Subject

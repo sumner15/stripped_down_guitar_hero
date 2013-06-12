@@ -56,7 +56,12 @@ Public Class SongGame
     Private topPannel As New Model("topPannel", "topPannel", {0, Height / 50, -20.0}, {0.0, 180.0, 0.0}, Width / (50 * 10))
     Private progressbar As New Model("progressBar", {0, Height / 50, -20.0}, {0.0, 180.0, 0.0}, Width / (50 * 10))
 
-
+    Private notePulseTime As Integer = Round(1 / 50 * 1000) '1(sec)/frequency(Hz) --> (msec)
+    Private targPulseTime As Integer = Round(1 / 60 * 1000) '1(sec)/frequency(Hz) --> (msec)
+    Private lastNotePulseTime As Integer
+    Private lastTargPulseTime As Integer
+    Private noteShow As Boolean = True
+    Private targShow As Boolean = True
 
     Public mySong As Song
     'Public gameClock As New StopWatchCustom
@@ -239,6 +244,8 @@ Public Class SongGame
         scorefile.WriteLine("stringNum" & vbTab & "success")
         mySong.player.Paused = False
         gameTimer.Start()
+        lastNotePulseTime = gameTimer.ElapsedMilliseconds
+        lastTargPulseTime = gameTimer.ElapsedMilliseconds
         'fretboard.getNextNote()
 
     End Sub
@@ -260,7 +267,21 @@ Public Class SongGame
         GL.PopMatrix()
         'GL.Disable(EnableCap.Texture2D) not sure if this will help
 
-        fretboard.draw(gameTimer.ElapsedMilliseconds)
+        'determine if it is time for our notes/targets to change flicker state 
+        If (gameTimer.ElapsedMilliseconds - lastNotePulseTime) > notePulseTime Then
+            If noteShow = False Then : noteShow = True
+            ElseIf noteShow = True Then : noteShow = False
+            End If
+            lastNotePulseTime = gameTimer.ElapsedMilliseconds            
+        End If
+        If (gameTimer.ElapsedMilliseconds - lastTargPulseTime) > targPulseTime Then
+            If targShow = False Then : targShow = True
+            ElseIf targShow = True Then : targShow = False
+            End If
+            lastTargPulseTime = gameTimer.ElapsedMilliseconds
+        End If
+
+        fretboard.draw(gameTimer.ElapsedMilliseconds, noteShow, targShow)
 
         ' draw signs
         instructions.drawSign()

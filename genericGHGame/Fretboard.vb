@@ -137,7 +137,7 @@ Public Class Fretboard
         If hit Then
             'Console.Write(vbTab & "hit")
             targets(stringNum).drawFlame()
-            'Console.WriteLine("draw flame if hit")
+            'Console.WriteLine("draw flame if hit")            
         Else
             'Console.Write(vbTab & "miss")
         End If

@@ -39,8 +39,6 @@ Public Class SongGame
     Private blockedTrial As Boolean = False
     Private randomBlocker As New Random()
 
-    'Public secondHand As FingerBot
-
     Private instructions As New TextSign("use if you want")
     Private scoreText As New TextSign("this is used to show your score")
 
@@ -53,10 +51,6 @@ Public Class SongGame
     Private PrevState As Integer = 0
     Private currentNote As Integer = 0
     Private lastNote As Integer
-
-    Private viscousGains(1) As Double
-    Private nullGains() As Double = {0.0, 0.0}
-    Private fieldControl() As Boolean
 
     Private legend As New Model("legend", "legendTile", {-Width / 50 + 5, 0.5 * (Height / 50), -6.0}, {90.0, 0.0, 0.0}, 1.5 * Width / Height)
     Private topPannel As New Model("topPannel", "topPannel", {0, Height / 50, -20.0}, {0.0, 180.0, 0.0}, Width / (50 * 10))
@@ -190,17 +184,18 @@ Public Class SongGame
     Private Sub updateCurrentNote()
         If (gameTimer.ElapsedMilliseconds > (fretboard.nextNoteTime + 100) And (Not fretboard.songOver)) Then
             Dim previousNote As Single
-            previousNote = fretboard.nextNotePos
-            ' check if they attempted the hit and increases the gain if they didn't - unless the previous trial was a blocked trial
+            previousNote = fretboard.nextNotePos            
 
             ' write a line to the score file indicating whether or not the trial was sucessful
             If greatSuccess Then
                 scorefile.WriteLine(fretboard.nextNotePos & vbTab & 1)
                 possibleScore += 1 : score += 1
+                setProgrssBar(score / possibleScore)
             Else
                 'Console.WriteLine("Current score " & score / possibleScore)
                 scorefile.WriteLine(fretboard.nextNotePos & vbTab & 0)
                 possibleScore += 1
+                setProgrssBar(score / possibleScore)
             End If
 
             greatSuccess = False ' just resetting it
@@ -224,7 +219,7 @@ Public Class SongGame
         Dim key As Integer = 0
         If (e.KeyChar = "1" Or e.KeyChar = "2" Or e.KeyChar = "3" Or e.KeyChar = "4" Or e.KeyChar = "5") Then
             key = AscW(e.KeyChar) - 49
-            fretboard.checkHit(gameTimer.ElapsedMilliseconds, key)
+            greatSuccess = fretboard.checkHit(gameTimer.ElapsedMilliseconds, key)
         ElseIf (e.KeyChar = "l") Then
             legend.visable = Not legend.visable
             Console.WriteLine("legend toggled")
@@ -295,6 +290,7 @@ Public Class SongGame
         legend.scale = {2 * Width / Height, 2 * Width / Height, 2 * Width / Height}
         progressbar.pos = {-0.975 * (Width / 50), (Height / 50) - 1.45 * (Width / 500), -30.0}
         progressbar.scale = {0.5 * Width / (50), Width / (500 * 3), Width / (50 * 10)}
+        setProgrssBar(score / possibleScore)
 
         ' now we need to move the lights
         lightPosition = {0.0F, 0.0F, 4.0F, 1.0F}
@@ -349,9 +345,13 @@ Public Class SongGame
 #End Region
 
 #Region "other functions"
+    '----------------------------------------------------------------------------------'
+    '------------------------------ set progress bar ----------------------------------'
+    '----------------------------------------------------------------------------------'
     Private Sub setProgrssBar(ByVal successRate As Single)
         ' success rate should be between 0 and 1
         progressbar.scale(0) = successRate * Width / (50)
+        'Console.WriteLine("success rate: " & successRate)
     End Sub
 
 #End Region

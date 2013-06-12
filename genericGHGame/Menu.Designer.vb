@@ -45,16 +45,16 @@ Partial Class Menu
         '
         Me.difficultyList.FormattingEnabled = True
         Me.difficultyList.Items.AddRange(New Object() {"easy", "medium", "hard"})
-        Me.difficultyList.Location = New System.Drawing.Point(448, 337)
+        Me.difficultyList.Location = New System.Drawing.Point(566, 355)
         Me.difficultyList.Name = "difficultyList"
-        Me.difficultyList.Size = New System.Drawing.Size(67, 43)
+        Me.difficultyList.Size = New System.Drawing.Size(67, 56)
         Me.difficultyList.TabIndex = 21
         '
         'playSongBtn
         '
-        Me.playSongBtn.Location = New System.Drawing.Point(361, 337)
+        Me.playSongBtn.Location = New System.Drawing.Point(382, 354)
         Me.playSongBtn.Name = "playSongBtn"
-        Me.playSongBtn.Size = New System.Drawing.Size(81, 44)
+        Me.playSongBtn.Size = New System.Drawing.Size(178, 58)
         Me.playSongBtn.TabIndex = 19
         Me.playSongBtn.Text = "Play Song"
         Me.playSongBtn.UseVisualStyleBackColor = True
@@ -63,7 +63,7 @@ Partial Class Menu
         '
         Me.Panel2.Controls.Add(Me.songNameLbl)
         Me.Panel2.Controls.Add(Me.thumbnail)
-        Me.Panel2.Location = New System.Drawing.Point(361, 50)
+        Me.Panel2.Location = New System.Drawing.Point(382, 67)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(251, 281)
         Me.Panel2.TabIndex = 18
@@ -92,9 +92,9 @@ Partial Class Menu
         Me.songList.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.songList.FormattingEnabled = True
         Me.songList.ItemHeight = 18
-        Me.songList.Location = New System.Drawing.Point(196, 50)
+        Me.songList.Location = New System.Drawing.Point(217, 67)
         Me.songList.Name = "songList"
-        Me.songList.Size = New System.Drawing.Size(159, 364)
+        Me.songList.Size = New System.Drawing.Size(159, 346)
         Me.songList.TabIndex = 17
         '
         'Panel1
@@ -103,7 +103,7 @@ Partial Class Menu
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.subIDLbl)
         Me.Panel1.Controls.Add(Me.subIdTb)
-        Me.Panel1.Location = New System.Drawing.Point(14, 314)
+        Me.Panel1.Location = New System.Drawing.Point(35, 313)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(176, 100)
         Me.Panel1.TabIndex = 16
@@ -150,7 +150,7 @@ Partial Class Menu
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(6, 12)
+        Me.Label1.Location = New System.Drawing.Point(233, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(181, 33)
         Me.Label1.TabIndex = 15
@@ -161,9 +161,9 @@ Partial Class Menu
         Me.subjectList.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.subjectList.FormattingEnabled = True
         Me.subjectList.ItemHeight = 18
-        Me.subjectList.Location = New System.Drawing.Point(12, 50)
+        Me.subjectList.Location = New System.Drawing.Point(33, 67)
         Me.subjectList.Name = "subjectList"
-        Me.subjectList.Size = New System.Drawing.Size(178, 256)
+        Me.subjectList.Size = New System.Drawing.Size(178, 238)
         Me.subjectList.TabIndex = 14
         '
         'Menu
@@ -171,7 +171,7 @@ Partial Class Menu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(645, 443)
+        Me.ClientSize = New System.Drawing.Size(666, 453)
         Me.Controls.Add(Me.difficultyList)
         Me.Controls.Add(Me.playSongBtn)
         Me.Controls.Add(Me.Panel2)

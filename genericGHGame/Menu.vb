@@ -21,6 +21,7 @@ Public Class Menu
         gameRunning = 0
         currentSub = pop.subjects(0)
         currentSong = library.songs(0)
+        difficultyList.SelectedIndex = 0
 
         moreNoise = New NoiseMaker()
     End Sub
@@ -40,7 +41,7 @@ Public Class Menu
             subjectList.DataSource = pop.subIds
             subjectList.Update()
         Else
-            MsgBox("Enter the subject's information before trying to save the subejct.")
+            MsgBox("Enter the subject's information before trying to save the subject.")
         End If
     End Sub
 
@@ -68,13 +69,8 @@ Public Class Menu
     '---------------------------------- play song button ----------------------------'
     '--------------------------------------------------------------------------------'
     Private Sub playSongBtn_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles playSongBtn.Click
-        Dim f1gain As Single
-        Dim f2gain As Single
         Dim difficulties() As Integer = {level.superEasy, level.easy, level.medium}
         If Not gameRunning Then
-
-            MsgBox(CStr(f1gain) & vbTab & CStr(f2gain))
-
             gameRunning = True
             trialStr = currentSong.name
             ourWindow = New SongGame(difficulties(difficultyList.SelectedIndex))

@@ -7,30 +7,15 @@
     </ProductVersion>
     <SchemaVersion>
     </SchemaVersion>
-    <ProjectGuid>{984119FC-1173-465A-8A4F-3D94AE346845}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>genericGHgame</RootNamespace>
-    <AssemblyName>genericGHgame</AssemblyName>
+    <ProjectGuid>{F89F3235-A98D-4D1A-A097-021664CB7CC8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>genericGH.Module1</StartupObject>
+    <RootNamespace>genericGH</RootNamespace>
+    <AssemblyName>genericGH</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -39,8 +24,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>genericGH.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -50,8 +34,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>genericGH.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -66,12 +49,31 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Sub Main</StartupObject>
-  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="irrKlang.NET4, Version=1.0.3861.18767, Culture=neutral, PublicKeyToken=a854741bd80517c7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\irrKlang.NET4.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.vb" />
@@ -91,9 +93,21 @@
     <Compile Include="MidiReader.vb" />
     <Compile Include="Model.vb" />
     <Compile Include="Module1.vb" />
-    <Compile Include="My Project\Application.Designer.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Resources.Designer.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
     <Compile Include="MyLight.vb" />
     <Compile Include="NoiseMaker.vb" />
     <Compile Include="Population.vb" />
@@ -105,270 +119,27 @@
     <Compile Include="Vertex.vb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\irrKlang.NET4.dll" />
-    <Content Include="bin\Debug\OpenTK.dll" />
-    <Content Include="images\background.jpg" />
-    <Content Include="images\screenShot.jpg" />
-    <Content Include="My Project\Application.myapp" />
-    <Content Include="scoreFiles\score_53_4261322.txt" />
-    <Content Include="scoreFiles\score_66_4252353.txt" />
-    <Content Include="scoreFiles\score_66_4252354.txt" />
-    <Content Include="scoreFiles\score_66_4252355.txt" />
-    <Content Include="scoreFiles\score_66_42601.txt" />
-    <Content Include="scoreFiles\score_66_4261033.txt" />
-    <Content Include="scoreFiles\score_66_4261036.txt" />
-    <Content Include="songs\Alice%27s Resturant\field_medium.txt" />
-    <Content Include="songs\Alice%27s Resturant\guitar.ogg" />
-    <Content Include="songs\Alice%27s Resturant\notes.mid" />
-    <Content Include="songs\Alice%27s Resturant\thumbnail.jpg" />
-    <Content Include="songs\allSongs.txt" />
-    <Content Include="songs\Bad Moon Rising\field_easy.txt" />
-    <Content Include="songs\Bad Moon Rising\field_medium.txt" />
-    <Content Include="songs\Bad Moon Rising\guitar.ogg" />
-    <Content Include="songs\Bad Moon Rising\notes.mid" />
-    <Content Include="songs\Bad Moon Rising\thumbnail.jpg" />
-    <Content Include="songs\can%27t help falling in love\guitar.ogg" />
-    <Content Include="songs\can%27t help falling in love\notes.mid" />
-    <Content Include="songs\can%27t help falling in love\song.ogg" />
-    <Content Include="songs\can%27t help falling in love\thumbnail.jpg" />
-    <Content Include="songs\Chicago\field_easy.txt" />
-    <Content Include="songs\Chicago\field_medium.txt" />
-    <Content Include="songs\Chicago\guitar.ogg" />
-    <Content Include="songs\Chicago\notes.mid" />
-    <Content Include="songs\Chicago\thumbnail.jpg" />
-    <Content Include="songs\Come On Eileen\guitar.ogg" />
-    <Content Include="songs\Come On Eileen\notes.mid" />
-    <Content Include="songs\Come On Eileen\thumbnail.jpg" />
-    <Content Include="songs\everyday\field_easy.txt" />
-    <Content Include="songs\everyday\guitar.ogg" />
-    <Content Include="songs\everyday\notes.mid" />
-    <Content Include="songs\everyday\song.ogg" />
-    <Content Include="songs\everyday\thumbnail.jpg" />
-    <Content Include="songs\fly me to the moon\guitar.ogg" />
-    <Content Include="songs\fly me to the moon\notes.mid" />
-    <Content Include="songs\fly me to the moon\song.ogg" />
-    <Content Include="songs\fly me to the moon\thumbnail.jpg" />
-    <Content Include="songs\happy together\guitar.ogg" />
-    <Content Include="songs\happy together\notes.mid" />
-    <Content Include="songs\happy together\song.ogg" />
-    <Content Include="songs\happy together\thumbnail.jpg" />
-    <Content Include="songs\I Walk the Line\guitar.ogg" />
-    <Content Include="songs\I Walk the Line\notes.mid" />
-    <Content Include="songs\I Walk the Line\original.mp3" />
-    <Content Include="songs\I Walk the Line\thumbnail.jpg" />
-    <Content Include="songs\I%27ve Got a Woman\guitar.ogg" />
-    <Content Include="songs\I%27ve Got a Woman\notes.mid" />
-    <Content Include="songs\I%27ve Got a Woman\original.mp3" />
-    <Content Include="songs\I%27ve Got a Woman\thumbnail.jpg" />
-    <Content Include="songs\noteFiles\Alice%27s Resturant.txt" />
-    <Content Include="songs\noteFiles\Bad Moon Rising.txt" />
-    <Content Include="songs\noteFiles\can%27t help falling in love.txt" />
-    <Content Include="songs\noteFiles\Chicago.txt" />
-    <Content Include="songs\noteFiles\Come On Eileen.txt" />
-    <Content Include="songs\noteFiles\ComeOnEileenHard.txt" />
-    <Content Include="songs\noteFiles\everyday.txt" />
-    <Content Include="songs\noteFiles\fly me to the moon.txt" />
-    <Content Include="songs\noteFiles\happy together.txt" />
-    <Content Include="songs\noteFiles\I walk the line.txt" />
-    <Content Include="songs\noteFiles\I%27ve got a woman.txt" />
-    <Content Include="songs\noteFiles\Old Time Rock And Roll.txt" />
-    <Content Include="songs\noteFiles\test tapping.txt" />
-    <Content Include="songs\noteFiles\training.txt" />
-    <Content Include="songs\noteFiles\trapeze swinger.txt" />
-    <Content Include="songs\noteFiles\With or Without You.txt" />
-    <Content Include="songs\Old Time Rock And Roll\guitar.ogg" />
-    <Content Include="songs\Old Time Rock And Roll\notes.mid" />
-    <Content Include="songs\Old Time Rock And Roll\thumbnail.jpg" />
-    <Content Include="songs\test tapping\guitar.ogg" />
-    <Content Include="songs\test tapping\notes.mid" />
-    <Content Include="songs\test tapping\thumbnail.jpg" />
-    <Content Include="songs\training\field_easy.txt" />
-    <Content Include="songs\training\guitar.ogg" />
-    <Content Include="songs\training\notes.mid" />
-    <Content Include="songs\training\thumbnail.jpg" />
-    <Content Include="songs\trapeze swinger\field_easy.txt" />
-    <Content Include="songs\trapeze swinger\field_medium.txt" />
-    <Content Include="songs\trapeze swinger\guitar.ogg" />
-    <Content Include="songs\trapeze swinger\notes.mid" />
-    <Content Include="songs\trapeze swinger\thumbnail.jpg" />
-    <Content Include="songs\With or Without You\guitar.ogg" />
-    <Content Include="songs\With or Without You\notes.mid" />
-    <Content Include="songs\With or Without You\thumbnail.jpg" />
-    <Content Include="sounds\crunch1.ogg" />
-    <Content Include="sounds\crunch2.ogg" />
-    <Content Include="sounds\crunch3.ogg" />
-    <Content Include="sounds\fiba1.ogg" />
-    <Content Include="sounds\fiba2.ogg" />
-    <Content Include="sounds\fiba3.ogg" />
-    <Content Include="sounds\fiba4.ogg" />
-    <Content Include="sounds\fiba5.ogg" />
-    <Content Include="sounds\fiba6.ogg" />
-    <Content Include="Subjects\subjectFile.txt" />
-    <Content Include="textures\clouds2.bmp" />
-    <Content Include="textures\fretboard2.bmp" />
-    <Content Include="textures\fretboard3.bmp" />
-    <Content Include="textures\legendTile.bmp" />
-    <Content Include="textures\note.bmp" />
-    <Content Include="textures\note1.bmp" />
-    <Content Include="textures\note2.bmp" />
-    <Content Include="textures\note3.bmp" />
-    <Content Include="textures\note4.bmp" />
-    <Content Include="textures\note5.bmp" />
-    <Content Include="textures\sample.bmp" />
-    <Content Include="textures\space.bmp" />
-    <Content Include="textures\topPannel.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="objFiles\ball.mtl" />
-    <None Include="objFiles\ball.obj" />
-    <None Include="objFiles\ballb.mtl" />
-    <None Include="objFiles\ballb.obj" />
-    <None Include="objFiles\ballg.mtl" />
-    <None Include="objFiles\ballg.obj" />
-    <None Include="objFiles\ballr.mtl" />
-    <None Include="objFiles\ballr.obj" />
-    <None Include="objFiles\bally.mtl" />
-    <None Include="objFiles\bally.obj" />
-    <None Include="objFiles\can.mtl" />
-    <None Include="objFiles\can.obj" />
-    <None Include="objFiles\chimp.mtl" />
-    <None Include="objFiles\chimp.obj" />
-    <None Include="objFiles\cloudBox.mtl" />
-    <None Include="objFiles\cloudbox.obj" />
-    <None Include="objFiles\cloudSphere.mtl" />
-    <None Include="objFiles\cloudSphere.obj" />
-    <None Include="objFiles\cube.mtl" />
-    <None Include="objFiles\cube.obj" />
-    <None Include="objFiles\cubegreen.mtl" />
-    <None Include="objFiles\cubegreen.obj" />
-    <None Include="objFiles\flame.mtl" />
-    <None Include="objFiles\flame.obj" />
-    <None Include="objFiles\fretBoard.mtl" />
-    <None Include="objFiles\fretBoard.obj" />
-    <None Include="objFiles\gripper.mtl" />
-    <None Include="objFiles\gripper.obj" />
-    <None Include="objFiles\legend.mtl" />
-    <None Include="objFiles\legend.obj" />
-    <None Include="objFiles\mtltest.mtl" />
-    <None Include="objFiles\mtltest.obj" />
-    <None Include="objFiles\note.mtl" />
-    <None Include="objFiles\note.obj" />
-    <None Include="objFiles\note2.mtl" />
-    <None Include="objFiles\note2.obj" />
-    <None Include="objFiles\note3.mtl" />
-    <None Include="objFiles\note3.obj" />
-    <None Include="objFiles\progressBar.mtl" />
-    <None Include="objFiles\progressBar.obj" />
-    <None Include="objFiles\rock.mtl" />
-    <None Include="objFiles\rock.obj" />
-    <None Include="objFiles\sphere.mtl" />
-    <None Include="objFiles\sphere.obj" />
-    <None Include="objFiles\tapper.mtl" />
-    <None Include="objFiles\tapper.obj" />
-    <None Include="objFiles\target.mtl" />
-    <None Include="objFiles\target.obj" />
-    <None Include="objFiles\target2.mtl" />
-    <None Include="objFiles\target2.obj" />
-    <None Include="objFiles\target2hit.mtl" />
-    <None Include="objFiles\target2hit.obj" />
-    <None Include="objFiles\targetc.mtl" />
-    <None Include="objFiles\targetc.obj" />
-    <None Include="objFiles\test.x3d" />
-    <None Include="objFiles\texturedCube.mtl" />
-    <None Include="objFiles\texturedCube.obj" />
-    <None Include="objFiles\topPannel.mtl" />
-    <None Include="objFiles\topPannel.obj" />
-    <None Include="objFiles\tube.mtl" />
-    <None Include="objFiles\tube.obj" />
-    <None Include="songs\Alice%27s Resturant\notes.eof" />
-    <None Include="songs\Alice%27s Resturant\song.ini" />
-    <None Include="songs\Bad Moon Rising\notes.backup.eof" />
-    <None Include="songs\Bad Moon Rising\notes.eof" />
-    <None Include="songs\Bad Moon Rising\song.ini" />
-    <None Include="songs\can%27t help falling in love\notes.backup.eof" />
-    <None Include="songs\can%27t help falling in love\notes.eof" />
-    <None Include="songs\can%27t help falling in love\notes.mid.backup" />
-    <None Include="songs\can%27t help falling in love\song.ini" />
-    <None Include="songs\Chicago\notes.backup.eof" />
-    <None Include="songs\Chicago\notes.eof" />
-    <None Include="songs\Chicago\song.ini" />
-    <None Include="songs\Come On Eileen\notes.backup.eof" />
-    <None Include="songs\Come On Eileen\notes.eof" />
-    <None Include="songs\Come On Eileen\song.ini" />
-    <None Include="songs\everyday\notes.backup.eof" />
-    <None Include="songs\everyday\notes.eof" />
-    <None Include="songs\everyday\notes.mid.backup" />
-    <None Include="songs\everyday\song.ini" />
-    <None Include="songs\fly me to the moon\notes.backup.eof" />
-    <None Include="songs\fly me to the moon\notes.eof" />
-    <None Include="songs\fly me to the moon\notes.mid.backup" />
-    <None Include="songs\fly me to the moon\song.ini" />
-    <None Include="songs\happy together\notes.backup.eof" />
-    <None Include="songs\happy together\notes.eof" />
-    <None Include="songs\happy together\notes.mid.backup" />
-    <None Include="songs\happy together\song.ini" />
-    <None Include="songs\I Walk the Line\notes.eof" />
-    <None Include="songs\I Walk the Line\song.ini" />
-    <None Include="songs\I%27ve Got a Woman\notes.eof" />
-    <None Include="songs\I%27ve Got a Woman\song.ini" />
-    <None Include="songs\Old Time Rock And Roll\notes.backup.eof" />
-    <None Include="songs\Old Time Rock And Roll\notes.eof" />
-    <None Include="songs\Old Time Rock And Roll\song.ini" />
-    <None Include="songs\test tapping\notes.backup.eof" />
-    <None Include="songs\test tapping\notes.eof" />
-    <None Include="songs\test tapping\song.ini" />
-    <None Include="songs\training\notes.eof" />
-    <None Include="songs\training\song.ini" />
-    <None Include="songs\trapeze swinger\notes.backup.eof" />
-    <None Include="songs\trapeze swinger\notes.eof" />
-    <None Include="songs\trapeze swinger\song.ini" />
-    <None Include="songs\With or Without You\notes.backup.eof" />
-    <None Include="songs\With or Without You\notes.eof" />
-    <None Include="songs\With or Without You\song.ini" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="My Project\Resources.resx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="irrKlang.NET4, Version=1.0.3861.18767, Culture=neutral, PublicKeyToken=a854741bd80517c7, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\irrKlang.NET4.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
-    <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

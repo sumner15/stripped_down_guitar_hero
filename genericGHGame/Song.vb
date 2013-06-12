@@ -160,48 +160,6 @@ Public Class Song
 
     End Sub
 
-    '--------------------------------------------------------------------------------'
-    '-----------------------  read field configuration file  ------------------------'
-    '--------------------------------------------------------------------------------'
-    Public Sub readFieldFile(ByVal difficulty As Integer, ByRef fieldVec() As Boolean)
-        Dim fieldFile As StreamReader
-        Dim numNotes As Integer = 0
-        Dim fileExists As Boolean = False
-        Select Case difficulty
-            Case 0
-                If System.IO.File.Exists(GAMEPATH & "songs\" & name & "\field_easy.txt") Then
-                    fieldFile = New StreamReader(GAMEPATH & "songs\" & name & "\field_easy.txt")
-                    fileExists = True
-                End If
-            Case 1
-                If System.IO.File.Exists(GAMEPATH & "songs\" & name & "\field_medium.txt") Then
-                    fieldFile = New StreamReader(GAMEPATH & "songs\" & name & "\field_medium.txt")
-                    fileExists = True
-                End If
-
-            Case 2
-                If System.IO.File.Exists(GAMEPATH & "songs\" & name & "\field_hard.txt") Then
-                    fieldFile = New StreamReader(GAMEPATH & "songs\" & name & "\field_hard.txt")
-                    fileExists = True
-                End If
-
-            Case Else
-                If System.IO.File.Exists(GAMEPATH & "songs\" & name & "\field_general.txt") Then
-                    fieldFile = New StreamReader(GAMEPATH & "songs\" & name & "\field_general.txt")
-                    fileExists = True
-                End If
-
-        End Select
-
-        If fileExists Then
-            numNotes = fieldFile.ReadLine()
-            ReDim fieldVec(numNotes)
-            For i As Integer = 0 To (numNotes - 1) Step 1
-                fieldVec(i) = Convert.ToBoolean(fieldFile.ReadLine)
-            Next
-        End If
-    End Sub
-
 End Class
 
 

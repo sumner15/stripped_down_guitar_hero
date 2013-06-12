@@ -19,10 +19,28 @@ Module Module1
     Sub Main()
         GAMEPATH = GAMEPATH.Substring(0, GAMEPATH.LastIndexOf("\"))
         GAMEPATH = GAMEPATH.Substring(0, GAMEPATH.LastIndexOf("\") + 1)
+        makeAbsentDirectories()
 
         Application.EnableVisualStyles()
         menu = New Menu
         Application.Run(menu)
+
+    End Sub
+
+    ''------------------------------- make absent directories ---------------------------''
+    '' HG will not track empty directories, and we don't want it to track folders full of
+    '' data. As such, we need to make our data directories if they do not exist
+    Sub makeAbsentDirectories()
+        'subjects
+        If (Not System.IO.Directory.Exists(GAMEPATH & "Subjects")) Then
+            System.IO.Directory.CreateDirectory(GAMEPATH & "Subjects")
+            Console.WriteLine("made subjects dir")
+        End If
+        If (Not System.IO.File.Exists(GAMEPATH & "Subjects\" & "allSubjects.txt")) Then
+            Dim allSubjectsFile As New System.IO.StreamWriter(GAMEPATH & "Subjects\" & "allSubjects.txt")
+            allSubjectsFile.WriteLine("default")
+            allSubjectsFile.Close()
+        End If
 
     End Sub
 

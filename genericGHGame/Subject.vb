@@ -53,16 +53,28 @@ Public Class Subject
     '--------------------------------------------------------------------------------'
     Private Sub readSubjectFile(ByVal subId As String)
         Dim subjectFile As StreamReader
-        subjectFile = New StreamReader(GAMEPATH & "subjects\" & subId & ".txt")
-        'subjectFile = My.Computer.FileSystem.OpenTextFileReader(GAMEPATH & "subjects\" & subId & ".txt")
-        num = subjectFile.ReadLine()
-        ID = subjectFile.ReadLine()
-        LoginDate = subjectFile.ReadLine()
-        Kp1 = subjectFile.ReadLine()
-        Kp2 = subjectFile.ReadLine()
-        Kd1 = subjectFile.ReadLine()
-        Kd2 = subjectFile.ReadLine()
-        subjectFile.Close()
+        If File.Exists((GAMEPATH & "subjects\" & subId & ".txt")) Then
+            subjectFile = New StreamReader(GAMEPATH & "subjects\" & subId & ".txt")
+            'subjectFile = My.Computer.FileSystem.OpenTextFileReader(GAMEPATH & "subjects\" & subId & ".txt")
+            num = subjectFile.ReadLine()
+            ID = subjectFile.ReadLine()
+            LoginDate = subjectFile.ReadLine()
+            Kp1 = subjectFile.ReadLine()
+            Kp2 = subjectFile.ReadLine()
+            Kd1 = subjectFile.ReadLine()
+            Kd2 = subjectFile.ReadLine()
+            subjectFile.Close()
+        Else
+            num = 0
+            ID = "default"
+            LoginDate = Now.Date.ToString("yyyy-MM-dd")
+            Kp1 = 0
+            Kp2 = 0
+            Kd1 = 0
+            Kd2 = 0
+        End If
+
+
     End Sub
     '--------------------------------------------------------------------------------'
     '------------------------------- update subject file ----------------------------'

@@ -87,7 +87,7 @@ Public Class SongGame
         instructions.visable = False
 
         lastNote = fretboard.numNotes - 1
-        MsgBox(Width / (50 * 10))
+        'MsgBox(Width / (50 * 10))
 
     End Sub
 #End Region
@@ -263,17 +263,16 @@ Public Class SongGame
         GL.BindTexture(TextureTarget.Texture2D, cloudBox.textureID)
         cloudBox.drawVbo()
         GL.PopMatrix()
-        GL.Disable(EnableCap.Texture2D)
+        'GL.Disable(EnableCap.Texture2D) not sure if this will help
 
         fretboard.draw(gameTimer.ElapsedMilliseconds)
-
-        'now for the orthographic stuff
-        ViewOrtho()
 
         ' draw signs
         instructions.drawSign()
         If theEnd Then scoreText.drawSign()
 
+        'now for the orthographic stuff
+        ViewOrtho()
         legend.drawModel()
         topPannel.drawModel()
         progressbar.drawModel()

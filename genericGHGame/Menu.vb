@@ -80,5 +80,16 @@ Public Class Menu
         End If
     End Sub
 
+    '--------------------------------------------------------------------------------'
+    '---------------------------------- flicker rate HSB ----------------------------'
+    '--------------------------------------------------------------------------------'
+    Private Sub NoteRateHSB_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles NoteRateHSB.Scroll
+        NoteRateLbl.Text = CStr(NoteRateHSB.Value)
+        noteRate = NoteRateHSB.Value
+    End Sub
 
+    Private Sub TargRateHSB_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles TargRateHSB.Scroll
+        TargRateLbl.Text = CStr(TargRateHSB.Value)
+        targRate = TargRateHSB.Value
+    End Sub
 End Class

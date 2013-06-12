@@ -23,7 +23,7 @@ syntax: glob
 *.sbr
 *.scc
 *.DotSettings
-*.vbproj
+
 
 # ignore folders created by visual studio
 #[Bb]in

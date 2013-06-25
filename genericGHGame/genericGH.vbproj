@@ -76,6 +76,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BCI2000Exchange.vb" />
     <Compile Include="Camera.vb" />
     <Compile Include="Form.vb" />
     <Compile Include="Fretboard.vb" />
